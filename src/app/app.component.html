@@ -1,20 +1,79 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="fluid-container">
+  <div class="jumbotron">
+    <h1>Angular Dropdown</h1>
+    <p>POC on Angular Dropdown with bootstrap</p>
+    <div class="container">
+      <!-- <div class="dropdown">
+        <div class="form-group">
+          <div class="selected-options">
+            <div class="chip">
+              <img src="assets/images/img_avatar_male.png" alt="Person" width="96" height="96">
+              John Doe
+              <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+            </div>
+            <div class="chip">
+              <img src="assets/images/img_avatar_female.png" alt="Person" width="96" height="96">
+              John Doe
+              <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+            </div>
+          </div>
+          <input type="text" class="search form-control dropdown-toggle" (focus)="dropdownActive = true"
+            (focusout)="dropdownActive = false">
+        </div>
+        <div class="dropdown-menu dropdown-container" [class.show]="dropdownActive">
+          <span class="dropdown-item">Link 1</span>
+          <span class="dropdown-item">Link 2</span>
+          <span class="dropdown-item">Link 3</span>
+        </div>
+      </div> -->
+      <div class="dropdown">
+        <div class="dropdown-tags-input" tabindex="-1" (click)="dropdownActive = true"
+            (blur)="dropdownActive = false">
+          <span class="chip">
+            <img src="assets/images/img_avatar_male.png" alt="Person" width="96" height="96">
+            John Doe
+            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+          </span>
+          <span class="chip">
+            <img src="assets/images/img_avatar_female.png" alt="Person" width="96" height="96">
+            Jane
+            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+          </span>
+          <span class="chip">
+            <img src="assets/images/img_avatar_male.png" alt="Person" width="96" height="96">
+            John Doe
+            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+          </span>
+          <span class="chip">
+            <img src="assets/images/img_avatar_female.png" alt="Person" width="96" height="96">
+            Jane
+            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+          </span>
+          <span class="chip">
+            <img src="assets/images/img_avatar_male.png" alt="Person" width="96" height="96">
+            John Doe
+            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+          </span>
+          <span class="chip">
+            <img src="assets/images/img_avatar_female.png" alt="Person" width="96" height="96">
+            Jane
+            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+          </span>
+          <input type="text" class="dropdown-input">
+        </div>
+        <div class="dropdown-menu dropdown-container show" [class.show]="dropdownActive"><!--  -->
+          <span class="dropdown-item">
+            <img src="assets/images/img_avatar_female.png" alt="Person" width="96" height="96">
+            <span class="title">Jane</span>
+            <span class="email">Jane@example.com</span>
+          </span>
+          <span class="dropdown-item">
+            <img src="assets/images/img_avatar_male.png" alt="Person" width="96" height="96">
+            <span class="title">John</span>
+            <span class="email">John@example.com</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
