@@ -23,6 +23,11 @@ export class AppComponent {
       "name": "Joker",
       "email": "joker@example.com"
     },
+    {
+      "avatar": "assets/images/img_avatar_male.png",
+      "name": "Batman",
+      "email": "batman@example.com"
+    },
   ];
   selectedItems: any = [
     {
@@ -36,4 +41,15 @@ export class AppComponent {
 
   }
 
+  selected(item: any) {
+    this.selectedItems.push(item);
+  }
+
+  removed(index: number) {
+    this.selectedItems.splice(index, 1);
+  }
+
+  trackByFn(index, item) {
+    return index; // or item.id
+  }
 }

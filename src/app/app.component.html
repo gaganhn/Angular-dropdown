@@ -4,17 +4,16 @@
     <p>POC on Angular Dropdown with bootstrap</p>
     <div class="container">
       <div class="dropdown">
-        <div class="dropdown-tags-input" tabindex="-1" (click)="dropdownActive = true"
-            (blur)="dropdownActive = false">
-          <span class="chip" *ngFor="let item of selectedItems; index as i;">
+        <div class="dropdown-tags-input" tabindex="-1" >
+          <span class="chip" *ngFor="let item of selectedItems; index as i;trackBy: trackByFn">
             <img [src]="item.avatar" alt="Person">
             {{item.name}}
-            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+            <span class="closebtn" (click)="removed(i)">&times;</span>
           </span>
-          <input type="text" class="dropdown-input">
+          <input type="text" class="dropdown-input" (focus)="dropdownActive = true">
         </div>
         <div class="dropdown-menu dropdown-container show" [class.show]="dropdownActive"><!--  -->
-          <span class="dropdown-item" *ngFor="let item of options; index as i;">
+          <span class="dropdown-item" *ngFor="let item of options | filterByKey : selectedItems : 'name' ; index as i;trackBy: trackByFn" (click)="selected(item)">
             <img [src]="item.avatar" alt="avatar">
             <span class="title">{{item.name}}</span>
             <span class="email">{{item.email}}</span>
