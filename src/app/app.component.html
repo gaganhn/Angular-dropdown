@@ -3,74 +3,21 @@
     <h1>Angular Dropdown</h1>
     <p>POC on Angular Dropdown with bootstrap</p>
     <div class="container">
-      <!-- <div class="dropdown">
-        <div class="form-group">
-          <div class="selected-options">
-            <div class="chip">
-              <img src="assets/images/img_avatar_male.png" alt="Person" width="96" height="96">
-              John Doe
-              <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-            </div>
-            <div class="chip">
-              <img src="assets/images/img_avatar_female.png" alt="Person" width="96" height="96">
-              John Doe
-              <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-            </div>
-          </div>
-          <input type="text" class="search form-control dropdown-toggle" (focus)="dropdownActive = true"
-            (focusout)="dropdownActive = false">
-        </div>
-        <div class="dropdown-menu dropdown-container" [class.show]="dropdownActive">
-          <span class="dropdown-item">Link 1</span>
-          <span class="dropdown-item">Link 2</span>
-          <span class="dropdown-item">Link 3</span>
-        </div>
-      </div> -->
       <div class="dropdown">
         <div class="dropdown-tags-input" tabindex="-1" (click)="dropdownActive = true"
             (blur)="dropdownActive = false">
-          <span class="chip">
-            <img src="assets/images/img_avatar_male.png" alt="Person" width="96" height="96">
-            John Doe
-            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-          </span>
-          <span class="chip">
-            <img src="assets/images/img_avatar_female.png" alt="Person" width="96" height="96">
-            Jane
-            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-          </span>
-          <span class="chip">
-            <img src="assets/images/img_avatar_male.png" alt="Person" width="96" height="96">
-            John Doe
-            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-          </span>
-          <span class="chip">
-            <img src="assets/images/img_avatar_female.png" alt="Person" width="96" height="96">
-            Jane
-            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-          </span>
-          <span class="chip">
-            <img src="assets/images/img_avatar_male.png" alt="Person" width="96" height="96">
-            John Doe
-            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-          </span>
-          <span class="chip">
-            <img src="assets/images/img_avatar_female.png" alt="Person" width="96" height="96">
-            Jane
+          <span class="chip" *ngFor="let item of selectedItems; index as i;">
+            <img [src]="item.avatar" alt="Person">
+            {{item.name}}
             <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
           </span>
           <input type="text" class="dropdown-input">
         </div>
         <div class="dropdown-menu dropdown-container show" [class.show]="dropdownActive"><!--  -->
-          <span class="dropdown-item">
-            <img src="assets/images/img_avatar_female.png" alt="Person" width="96" height="96">
-            <span class="title">Jane</span>
-            <span class="email">Jane@example.com</span>
-          </span>
-          <span class="dropdown-item">
-            <img src="assets/images/img_avatar_male.png" alt="Person" width="96" height="96">
-            <span class="title">John</span>
-            <span class="email">John@example.com</span>
+          <span class="dropdown-item" *ngFor="let item of options; index as i;">
+            <img [src]="item.avatar" alt="avatar">
+            <span class="title">{{item.name}}</span>
+            <span class="email">{{item.email}}</span>
           </span>
         </div>
       </div>
