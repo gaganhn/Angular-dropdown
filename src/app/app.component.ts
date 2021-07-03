@@ -28,6 +28,11 @@ export class AppComponent {
       "name": "Batman",
       "email": "batman@example.com"
     },
+    {
+      "avatar": "assets/images/img_avatar_male.png",
+      "name": "Batman New option",
+      "email": "batman@example.com"
+    }
   ];
   selectedItems: any = [
     {
